@@ -16,9 +16,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeMenu, toggleMenu } from "../../Redux/features/MenuSlice";
 
 export const Navbar = () => {
+ 
   const isMenuOpen = useSelector((state) => state.menu.isMenuOpen);
 
-  
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
@@ -35,8 +35,8 @@ export const Navbar = () => {
     <HeaderConteiner>
       <img src="/public/img/logo1.png" alt="logo" />
 
-      <LinksAndCartContainer >
-      <MenuHamburguesa    handleClicked={() => dispatch(toggleMenu())}/>
+      <LinksAndCartContainer>
+        <MenuHamburguesa handleClicked={() => dispatch(toggleMenu())} />
         {/* Links de navegación */}
         <LinksContainer clicked={isMenuOpen}>
           {isHomePage ? (
@@ -77,34 +77,33 @@ export const Navbar = () => {
               className="liBack"
               onClick={() => {
                 navigate(-1);
-                dispatch(closeMenu);
+                dispatch(closeMenu());
               }}
-              style={{  cursor: "pointer",
+              style={{
+                cursor: "pointer",
                 backgroundColor: "rgba(255, 255, 255, 0.15)",
                 color: "bisque",
-              padding: "0.7rem"}}
+                padding: "0.7rem",
+                
+              }}
             >
               Volver
             </li>
           )}
 
-{isProductsPage && (
-          <>
-            <motion.div whileHover={{ scale: 1.2 }}>
-              <CartContainer>
-                <CartIcons />
-              </CartContainer>
-            </motion.div>
-            <ContainerModelCart>
-              <CartModel />
-            </ContainerModelCart>
-          </>
-        )}
-          
+          {isProductsPage && (
+            <>
+              <motion.div whileHover={{ scale: 1.2 }}>
+                <CartContainer>
+                  <CartIcons />
+                </CartContainer>
+              </motion.div>
+              <ContainerModelCart>
+                <CartModel />
+              </ContainerModelCart>
+            </>
+          )}
         </LinksContainer>
-
-
-      
       </LinksAndCartContainer>
     </HeaderConteiner>
   );

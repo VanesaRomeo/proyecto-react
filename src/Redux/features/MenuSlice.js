@@ -1,22 +1,21 @@
 // src/slices/menuSlice.js
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const menuSlice = createSlice({
-  name: "menu",
+  name: 'menu',
   initialState: {
     isMenuOpen: false,
   },
   reducers: {
     toggleMenu: (state) => {
-    
       return {
         ...state,
-        isMenuOpen : !state.isMenuOpen,
+        isMenuOpen: !state.isMenuOpen,
       };
     },
     closeMenu: (state) => {
       state.isMenuOpen = false;
-    }
+    },
   },
 });
 

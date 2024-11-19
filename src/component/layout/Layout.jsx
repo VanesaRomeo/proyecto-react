@@ -1,6 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
 
 const LayoutWrapper = styled.main`
   width: 100%;
@@ -10,17 +9,14 @@ const LayoutWrapper = styled.main`
   align-items: center;
 `;
 
-
-export const Layout = ({children}) => {
+export const Layout = ({ children }) => {
   return (
     <>
-   
-    <LayoutWrapper>{children}</LayoutWrapper >
-    
+      <LayoutWrapper>{children}</LayoutWrapper>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+  children: PropTypes.node.isRequired,
+};

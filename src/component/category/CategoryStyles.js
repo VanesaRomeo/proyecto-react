@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const CategoryContainer = styled.div`
@@ -11,7 +11,7 @@ export const CategoryContainer = styled.div`
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: thin;
-  scrollbar-color: rgba(13,93,92,1) #f8f9fa;
+  scrollbar-color: rgba(13, 93, 92, 1) #f8f9fa;
 
   /* Ajustes responsivos */
   @media (max-width: 1200px) {
@@ -33,8 +33,8 @@ export const CategoryContainer = styled.div`
 export const CategoryDiv = styled(motion.div)`
   padding: 0.5rem 1rem;
   background-color: blanchedalmond;
-  color: rgba(13,93,92,1);
-  border: 1px solid rgba(13,93,92,1);
+  color: rgba(13, 93, 92, 1);
+  border: 1px solid rgba(13, 93, 92, 1);
   border-radius: 50px;
   cursor: pointer;
   font-size: 15px;

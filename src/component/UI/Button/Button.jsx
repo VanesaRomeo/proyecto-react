@@ -1,9 +1,9 @@
-import { ButtonStylesConteiner } from "./ButonStyles";
-import PropTypes from "prop-types";
+import { ButtonStylesConteiner } from './ButonStyles';
+import PropTypes from 'prop-types';
 
 const Button = ({
   children,
-  type = "button",
+  type = 'button',
   disabled = false,
   onClick = (e) => e.preventDefault(),
 }) => {
@@ -20,9 +20,9 @@ const Button = ({
 };
 
 Button.propTypes = {
-  children: PropTypes.node.isRequired, 
+  children: PropTypes.node.isRequired,
   disabled: PropTypes.bool,
-  onClick: PropTypes.func, 
+  onClick: PropTypes.func,
   type: PropTypes.string,
 };
 

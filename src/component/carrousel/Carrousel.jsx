@@ -1,7 +1,7 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { SliderContainer } from "./CarrouselStyles";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+import { SliderContainer } from './CarrouselStyles';
 
 function AutoPlay() {
   const settings = {
@@ -12,7 +12,7 @@ function AutoPlay() {
     autoplay: true,
     speed: 3000,
     autoplaySpeed: 2000,
-    cssEase: "linear",
+    cssEase: 'linear',
   };
   return (
     <SliderContainer>

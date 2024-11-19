@@ -1,8 +1,6 @@
+import { createSlice } from '@reduxjs/toolkit';
 
-
-import { createSlice } from "@reduxjs/toolkit";
-
-import { categorias } from "../../data/categorias";
+import { categorias } from '../../data/categorias';
 
 const INITIAL_STATE = {
   categorias: categorias,
@@ -10,15 +8,14 @@ const INITIAL_STATE = {
 };
 
 export const categoriesSlice = createSlice({
-  name: "categorias",
+  name: 'categorias',
   initialState: INITIAL_STATE,
   reducers: {
     selectCategory: (state, action) => {
-      
-      state.selectedCategory = action.payload !== state.selectedCategory ? action.payload : null;
-      
+      state.selectedCategory =
+        action.payload !== state.selectedCategory ? action.payload : null;
     },
-    
+
     // getCategories: (state) => state,
   },
 });

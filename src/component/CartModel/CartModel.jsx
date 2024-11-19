@@ -7,17 +7,17 @@ import {
   PrecioFormat,
   ProductCardWrapper,
   TotalStyled,
-} from "./CartModelStyles";
-import Button from "./../UI/Button/Button";
-import { CardCart } from "./CardCart";
+} from './CartModelStyles';
+import Button from './../UI/Button/Button';
+import { CardCart } from './CardCart';
 import {
   emptyCart,
   toggleCartVisibility,
-} from "../../Redux/features/Cart/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+} from '../../Redux/features/Cart/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { formatPrecio } from "./../../utiles/formatprecio";
+import { formatPrecio } from './../../utiles/formatprecio';
 
 const CartModel = () => {
   const { itemsInCart, isCartHidden } = useSelector((state) => state.cart);
@@ -39,7 +39,7 @@ const CartModel = () => {
           initial={{ translateY: 100 }}
           animate={{ translateY: 0 }}
           exit={{ translateY: 100 }}
-          transition={{ type: "spring", damping: 25 }}
+          transition={{ type: 'spring', damping: 25 }}
         >
           <MainContainer>
             <h2>Tu Compra</h2>
@@ -63,7 +63,7 @@ const CartModel = () => {
           <ButtonStylesContainer>
             <Button
               onClick={() => {
-                navigate("/CheckOut");
+                navigate('/CheckOut');
                 dispatch(toggleCartVisibility());
               }}
               disabled={!itemsInCart.length}

@@ -1,6 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
 
 export const ButtonStylesConteiner = styled(motion.button)`
   padding: 0.8rem 1.5rem;
@@ -13,11 +12,7 @@ export const ButtonStylesConteiner = styled(motion.button)`
   cursor: pointer;
   position: relative;
   width: 150px;
-margin: 15px;
-
-
-
-
+  margin: 15px;
 
   &:hover {
     opacity: 95%;
@@ -27,6 +22,4 @@ margin: 15px;
     cursor: not-allowed;
     opacity: 0.5;
   }
- 
-
-`
+`;

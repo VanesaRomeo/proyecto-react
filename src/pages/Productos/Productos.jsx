@@ -1,21 +1,18 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 import {
   CategoriasSections,
   Container,
-
   ProductGrid,
   ProductoDiv,
-} from "./ProductosStyles";
-import { Categories } from "../../component/category/Categories";
-import Button from "../../component/UI/Button/Button";
-import { useState } from "react";
+} from './ProductosStyles';
+import { Categories } from '../../component/category/Categories';
+import Button from '../../component/UI/Button/Button';
+import { useState } from 'react';
 
 import { CardProducto } from './CardProducto';
 import { INITIAL_LIMIT } from './../../utiles/constantes';
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-
-
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const Productos = () => {
   const location = useLocation();
@@ -26,29 +23,24 @@ export const Productos = () => {
 
   const [limit, setLimit] = useState(INITIAL_LIMIT);
 
-  
-
-
   const { productos = [] } = useSelector((state) => state.productos || {});
-  
+
   const { selectedCategory } = useSelector((state) => state.categorias);
 
-  
   const productosFiltrados = selectedCategory
-  ? productos.filter((producto) => producto.category === selectedCategory)
-  : productos;
+    ? productos.filter((producto) => producto.category === selectedCategory)
+    : productos;
 
-// Restringir la cantidad de productos a mostrar según el límite
-const productosLimitados = productosFiltrados.slice(0, limit);
+  // Restringir la cantidad de productos a mostrar según el límite
+  const productosLimitados = productosFiltrados.slice(0, limit);
 
-// Resetear el límite cuando cambie la categoría seleccionada
-useEffect(() => {
-  setLimit(INITIAL_LIMIT);
-}, [selectedCategory]);
+  // Resetear el límite cuando cambie la categoría seleccionada
+  useEffect(() => {
+    setLimit(INITIAL_LIMIT);
+  }, [selectedCategory]);
   return (
     <>
       <Container>
-    
         <ProductoDiv>
           <h1>Encuentra los libros que te apasionan</h1>
           <p>
@@ -65,25 +57,27 @@ useEffect(() => {
         </CategoriasSections>
 
         <ProductGrid>
-        
-        {productosLimitados.map((libro) => (
+          {productosLimitados.map((libro) => (
             <CardProducto key={libro.id} {...libro} />
           ))}
-       
         </ProductGrid>
       </Container>
 
       <Button
-         onClick={() => setLimit((prevLimit) => Math.max(prevLimit - INITIAL_LIMIT, INITIAL_LIMIT))}
-         disabled={limit === INITIAL_LIMIT}
+        onClick={() =>
+          setLimit((prevLimit) =>
+            Math.max(prevLimit - INITIAL_LIMIT, INITIAL_LIMIT)
+          )
+        }
+        disabled={limit === INITIAL_LIMIT}
       >
         <span>Ver menos</span>
       </Button>
 
       <Button
-     onClick={() => setLimit((prevLimit) => prevLimit + INITIAL_LIMIT)}
-     disabled={productosFiltrados.length <= limit}
-   >
+        onClick={() => setLimit((prevLimit) => prevLimit + INITIAL_LIMIT)}
+        disabled={productosFiltrados.length <= limit}
+      >
         <span>Ver mas</span>
       </Button>
     </>

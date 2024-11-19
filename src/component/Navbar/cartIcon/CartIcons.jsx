@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import { CartBadge, LinksContainer } from "../Navbar";
-import { FaShoppingCart } from "react-icons/fa";
-import { toggleCartVisibility } from "../../../Redux/features/Cart/cartSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { CartBadge, LinksContainer } from '../Navbar';
+import { FaShoppingCart } from 'react-icons/fa';
+import { toggleCartVisibility } from '../../../Redux/features/Cart/cartSlice';
 
 const CartIcons = () => {
   const total = useSelector((state) => state.cart.itemsInCart).reduce(

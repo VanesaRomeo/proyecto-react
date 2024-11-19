@@ -1,14 +1,9 @@
-import { Routes as ReactDomRoutes, Route } from "react-router-dom";
-import { Conocenos } from "../pages/Conocenos/Conocenos";
-import { Productos } from "../pages/Productos/Productos";
-import Home from "../pages/home/Home";
-import Formulario from "../pages/formulario/formulario";
+import { Routes as ReactDomRoutes, Route } from 'react-router-dom';
+import { Conocenos } from '../pages/Conocenos/Conocenos';
+import { Productos } from '../pages/Productos/Productos';
+import Home from '../pages/home/Home';
+import Formulario from '../pages/formulario/formulario';
 import Checkout from './../pages/checkOut/CheckOut';
-
-
-
-
-
 
 function Routes() {
   return (
@@ -17,7 +12,7 @@ function Routes() {
       <Route path="/Conocenos" element={<Conocenos />} />
       <Route path="/productos" element={<Productos />} />
       <Route path="/formulario" element={<Formulario />} />
-      <Route path="/checkOut" element={<Checkout/>} />
+      <Route path="/checkOut" element={<Checkout />} />
     </ReactDomRoutes>
   );
 }

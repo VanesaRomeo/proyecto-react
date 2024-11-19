@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import { CategoryDiv } from "./CategoryStyles";
-import { selectCategory } from "../../Redux/features/categorySlice";
-import PropTypes from "prop-types";
-import { FaStar } from "react-icons/fa";
+import { useDispatch, useSelector } from 'react-redux';
+import { CategoryDiv } from './CategoryStyles';
+import { selectCategory } from '../../Redux/features/categorySlice';
+import PropTypes from 'prop-types';
+import { FaStar } from 'react-icons/fa';
 
 export const Category = ({ title, category }) => {
   const { selectedCategory } = useSelector((state) => state.categorias);

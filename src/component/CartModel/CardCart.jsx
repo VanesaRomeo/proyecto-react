@@ -1,8 +1,8 @@
 // muestra cada producto, dentro del carro
 
-import { FaTrash } from "react-icons/fa";
-import { GoChevronLeft, GoChevronRight  } from "react-icons/go";
-import PropTypes from "prop-types";
+import { FaTrash } from 'react-icons/fa';
+import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
+import PropTypes from 'prop-types';
 import {
   AdjustButton,
   PrecioContainer,
@@ -11,11 +11,11 @@ import {
   ProductName,
   QuantityControlsWrapper,
   QuantityDisplay,
-} from "./CartModelStyles";
-import { useDispatch } from "react-redux";
-import { formatPrecio } from "../../utiles/formatprecio";
+} from './CartModelStyles';
+import { useDispatch } from 'react-redux';
+import { formatPrecio } from '../../utiles/formatprecio';
 
-import { addItem, removeItem } from "../../Redux/features/Cart/cartSlice";
+import { addItem, removeItem } from '../../Redux/features/Cart/cartSlice';
 
 export const CardCart = ({
   titulo,
@@ -34,8 +34,8 @@ export const CardCart = ({
         <PrecioContainer>{formatPrecio(precio)}</PrecioContainer>
       </ProductInfoWrapper>
       <QuantityControlsWrapper>
-        <AdjustButton  onClick={() => dispatch(removeItem(id))}>
-          {quantity === 1 ? <FaTrash />: <GoChevronLeft />}
+        <AdjustButton onClick={() => dispatch(removeItem(id))}>
+          {quantity === 1 ? <FaTrash /> : <GoChevronLeft />}
         </AdjustButton>
         <QuantityDisplay>{quantity}</QuantityDisplay>
         <AdjustButton

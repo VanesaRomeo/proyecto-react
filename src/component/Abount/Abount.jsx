@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import Button from "../UI/Button/Button";
-import { AbountInfo } from "./AbountStyles";
+import { useNavigate } from 'react-router-dom';
+import Button from '../UI/Button/Button';
+import { AbountInfo } from './AbountStyles';
 
 export const Abount = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export const Abount = () => {
         fomentar la lectura y acercar el conocimiento a todos.
       </p>
 
-      <Button onClick={() => navigate("/Conocenos")}>ven a conocer</Button>
+      <Button onClick={() => navigate('/Conocenos')}>ven a conocer</Button>
     </AbountInfo>
   );
 };

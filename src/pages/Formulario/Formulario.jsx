@@ -1,8 +1,8 @@
-import { Formik, Field, Form, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import styled from "styled-components";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import styled from 'styled-components';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 // Estilos usando styled-components
 const FormContainer = styled.div`
@@ -18,19 +18,16 @@ const FormContainer = styled.div`
     text-align: center;
 
     @media (max-width: 768px) {
-  
       width: 400px;
       font-size: 20px;
     }
-    @media (max-width: 480px) {   
-     text-align: center;
-  width: 300px;
-    padding: 12px;
-    margin-top: 5%;
+    @media (max-width: 480px) {
+      text-align: center;
+      width: 300px;
+      padding: 12px;
+      margin-top: 5%;
+    }
   }
-  }
-
-  
 `;
 
 const InputStyled = styled(Field)`
@@ -72,10 +69,9 @@ const TextContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 800px;
-  
 
-
-  p,h1 {
+  p,
+  h1 {
     font-size: 30px;
     background: linear-gradient(
       357deg,
@@ -84,26 +80,25 @@ const TextContainer = styled.div`
     );
     background-clip: text;
     -webkit-text-fill-color: transparent;
-   
   }
-  p{
-  font-size: 25px;
+  p {
+    font-size: 25px;
   }
 
   @media (max-width: 768px) {
-      width: 500px;
-      font-size: 20px;
-    }
+    width: 500px;
+    font-size: 20px;
+  }
 
-    @media (max-width: 560px) {
-      font-size: 20px;
-   width: 300px;
+  @media (max-width: 560px) {
+    font-size: 20px;
+    width: 300px;
     padding: 12px;
     margin-top: 5%;
   }
 
   @media (max-width: 480px) {
-   width: 300px;
+    width: 300px;
     padding: 12px;
     margin-top: 5%;
   }
@@ -114,39 +109,39 @@ const Email = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 // Esquema de validación con Yup
 const validationSchema = Yup.object({
   fullName: Yup.string()
-    .min(3, "Debe tener al menos 3 caracteres")
-    .required("Nombre y apellido requerido"),
+    .min(3, 'Debe tener al menos 3 caracteres')
+    .required('Nombre y apellido requerido'),
   phoneNumber: Yup.string()
-    .matches(/^[0-9]+$/, "Solo se permiten números")
-    .min(10, "Debe tener al menos 10 dígitos")
-    .required("Número de teléfono requerido"),
+    .matches(/^[0-9]+$/, 'Solo se permiten números')
+    .min(10, 'Debe tener al menos 10 dígitos')
+    .required('Número de teléfono requerido'),
   email: Yup.string()
-    .matches(Email, "Email no valido")
-    .required("Correo electrónico requerido"),
+    .matches(Email, 'Email no valido')
+    .required('Correo electrónico requerido'),
 
   comment: Yup.string()
     .trim()
-    .max(100, "El comentario no puede exceder 100 caracteres")
-    .required("Comentario requerido"),
+    .max(100, 'El comentario no puede exceder 100 caracteres')
+    .required('Comentario requerido'),
 });
 
 const Formulario = () => {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
   return (
     <Formik
       initialValues={{
-        fullName: "",
-        phoneNumber: "",
-        email: "",
-        comment: "",
+        fullName: '',
+        phoneNumber: '',
+        email: '',
+        comment: '',
       }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm }) => {
-        console.log("Formulario enviado:", values);
+        console.log('Formulario enviado:', values);
         resetForm();
       }}
     >

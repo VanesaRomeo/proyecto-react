@@ -1,6 +1,6 @@
-import { useSelector } from "react-redux";
-import { CategoryContainer } from "./CategoryStyles";
-import Category from "./Category";
+import { useSelector } from 'react-redux';
+import { CategoryContainer } from './CategoryStyles';
+import Category from './Category';
 
 export const Categories = () => {
   const { categorias } = useSelector((state) => state.categorias);
