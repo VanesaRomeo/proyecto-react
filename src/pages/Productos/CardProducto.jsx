@@ -2,7 +2,7 @@ import { ProductCard, ProductGrid } from './ProductosStyles';
 import Button from './../../component/UI/Button/Button';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../Redux/features/Cart/cartSlice';
+import { addItem } from '../../Redux/features/Cart/CartSlice';
 import { toast, Toaster } from 'sonner';
 // import { addProductToCart } from "../../Redux/features/Cart/cartSeconds";
 // import { useNavigate } from "react-router-dom";

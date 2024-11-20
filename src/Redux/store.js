@@ -4,9 +4,9 @@ import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
 import persistStore from 'redux-persist/es/persistStore';
 
-import categoryReducer from './features/categorySlice';
+import categoryReducer from './features/CategorySlice';
 import productReducer from './features/ProductSlice';
-import shoppingCartReducer from './features/Cart/cartSlice';
+import shoppingCartReducer from './features/Cart/CartSlice';
 import menuReducer from './features/MenuSlice';
 
 const rootReducer = combineReducers({
