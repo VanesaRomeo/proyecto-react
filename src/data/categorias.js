@@ -12,7 +12,7 @@ export const categorias = [
   {
     id: 3,
     title: 'Cs.Ficcion',
-    category: 'Cs. ficcion',
+    category: 'Cs.Ficcion',
   },
   {
     id: 4,

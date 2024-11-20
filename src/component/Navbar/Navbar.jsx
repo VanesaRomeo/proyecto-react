@@ -6,7 +6,7 @@ import {
   LinksContainer,
 } from "./Navbar";
 import { motion } from "framer-motion";
-import CartIcons from "./cartIcon/CartIcons";
+import CartIcons from "./CartIcon/CartIcons";
 import CartModel from "./../CartModel/CartModel";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -38,7 +38,8 @@ export const Navbar = () => {
       <LinksAndCartContainer>
         <MenuHamburguesa handleClicked={() => dispatch(toggleMenu())} />
         {/* Links de navegación */}
-        <LinksContainer clicked={isMenuOpen}>
+        <LinksContainer $clicked={isMenuOpen}>
+
           {isHomePage ? (
             <>
               <li>

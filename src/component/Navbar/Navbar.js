@@ -57,23 +57,21 @@ export const LinksAndCartContainer = styled.div`
 `;
 
 export const LinksContainer = styled.ul`
-  display: ${({ clicked }) => (clicked ? 'flex' : 'none')};
+  display: ${({ $clicked }) => ($clicked ? "flex" : "none")};
   flex-direction: column;
   margin: 0;
   padding: 0;
   position: fixed;
   top: 0;
-  left: ${(props) => (props.clicked ? '0' : '-100%')};
+  left: ${({ $clicked }) => ($clicked ? "0" : "-100%")};
   height: 50vh;
   width: 25vw;
   background-color: rgba(245, 245, 220, 0.2);
 
-  border-top-right-radius: ${(props) => (props.clicked ? '50%' : '0')};
-  border-bottom-right-radius: ${(props) => (props.clicked ? '50%' : '0')};
-  clip-path: ${(props) =>
-    props.clicked
-      ? 'circle(100% at left center)'
-      : 'circle(0% at left center)'};
+  border-top-right-radius: ${({ $clicked }) => ($clicked ? "50%" : "0")};
+  border-bottom-right-radius: ${({ $clicked }) => ($clicked ? "50%" : "0")};
+  clip-path: ${({ $clicked }) =>
+    $clicked ? "circle(100% at left center)" : "circle(0% at left center)"};
   transition: all 0.5s ease-in-out;
   justify-content: center;
   align-items: flex-start;
